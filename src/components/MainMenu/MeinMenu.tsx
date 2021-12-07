@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Container, Nav } from "react-bootstrap";
+import { HashRouter, Link } from "react-router-dom";
 
 export class MainMenuItem {
     text: string = '';
@@ -15,12 +16,12 @@ interface MainMenuProporties {
     items: MainMenuItem[]
 }
 
-interface MainManuState {
+interface MainMenuState {
     items: MainMenuItem[]
 }
 
 export default class MainMenu extends React.Component<MainMenuProporties> {
-    state: MainManuState;
+    state: MainMenuState;
     constructor(props: MainMenuProporties | Readonly<MainMenuProporties> ) {
         super(props)
 
@@ -39,9 +40,11 @@ export default class MainMenu extends React.Component<MainMenuProporties> {
         return(
             <Container >
                 <Card className = "home">
-                    <Nav variant = "tabs">
-                        { this.state.items.map(this.makeNavLink) }
-                    </Nav>
+                    <HashRouter>
+                        <Nav variant = "tabs">
+                            { this.state.items.map(this.makeNavLink) }
+                        </Nav>
+                    </HashRouter>
                 </Card>
             </Container>
         )
@@ -49,7 +52,7 @@ export default class MainMenu extends React.Component<MainMenuProporties> {
 
     private makeNavLink(item: MainMenuItem) {
         return (
-            <Nav.Link href = { item.link }>{ item.text }</Nav.Link>
+            <Link to = { item.link } className = "nav-link">{ item.text }</Link>
         )
     }   
 }

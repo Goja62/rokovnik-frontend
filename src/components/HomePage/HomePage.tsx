@@ -1,13 +1,12 @@
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import { Card, Container } from 'react-bootstrap';
-import logo from './logo.svg';
+import '../../index.css';
 
-function App() {
+function HomePage() {
   return (
-    <Container className = "home">
-      <Card >
+    <Container>
+      <Card className = "homePage">
         <Card.Title>
           <FontAwesomeIcon icon = { faHome }></FontAwesomeIcon> Home
         </Card.Title>
@@ -21,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
