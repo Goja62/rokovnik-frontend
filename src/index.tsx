@@ -19,9 +19,6 @@ import { KorisnikRegistrationPage } from './components/KorisnikRegistrattionPage
 const menuItems = [
   new MainMenuItem('Home', '/'),
   new MainMenuItem('Korisnik', '/korisnik'),
-  new MainMenuItem('Kontakt 1', '/kontakt/1'),
-  new MainMenuItem('Kontakt 11', '/kontakt/11'),
-  new MainMenuItem('Kontakt 111', '/kontakt/111'),
   new MainMenuItem('Registracija korisnika', '/register/korisnik'),
   new MainMenuItem('Log in', '/login/korisnik'),
 ]
