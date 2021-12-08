@@ -13,10 +13,16 @@ import HomePage from './components/HomePage/HomePage';
 import KorisnikPage from './components/KorisnikPage/KorisnikPage';
 import { Switch } from 'react-router';
 import KorisnikLoginPage from './components/KorisnikLoginPage/KorisnikLoginPage';
+import KontaktPage from './components/KontakPage/KontaktPage';
+import { KorisnikRegistrationPage } from './components/KorisnikRegistrattionPage/KorisnikRegistrattionPage';
 
 const menuItems = [
   new MainMenuItem('Home', '/'),
   new MainMenuItem('Korisnik', '/korisnik'),
+  new MainMenuItem('Kontakt 1', '/kontakt/1'),
+  new MainMenuItem('Kontakt 11', '/kontakt/11'),
+  new MainMenuItem('Kontakt 111', '/kontakt/111'),
+  new MainMenuItem('Registracija korisnika', '/register/korisnik'),
   new MainMenuItem('Log in', '/login/korisnik'),
 ]
 
@@ -27,6 +33,8 @@ ReactDOM.render(
       <Switch>
         <Route exact path = "/" component = { HomePage }></Route>
         <Route path = "/korisnik" component = { KorisnikPage }></Route>
+        <Route path = "/kontakt/:kId" component = { KontaktPage }></Route>
+        <Route path = "/register/korisnik" component = { KorisnikRegistrationPage }></Route>
         <Route path = "/login/korisnik" component = { KorisnikLoginPage }></Route>
       </Switch>
     </HashRouter>

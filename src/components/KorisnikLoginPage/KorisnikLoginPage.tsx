@@ -90,10 +90,11 @@ export default class KorisnikLoginPage extends React.Component {
             <Container>
                 <Col md = { { span: 6, offset: 3 } } >
                     <Card>
+                        <Card.Body>
                         <Card.Title>
                             <FontAwesomeIcon icon = { faSignInAlt }></FontAwesomeIcon> Korisnik Login
                         </Card.Title>
-                        <Card.Body>
+                        
                             <Form>
                                 <Form.Group>
                                     <Form.Label 
@@ -117,6 +118,7 @@ export default class KorisnikLoginPage extends React.Component {
                                         onChange = { e => this.formInputChanged(e as any) }>
                                     </Form.Control>
                                 </Form.Group>
+                                
                                 <Form.Group>
                                     <Button 
                                         variant = "primary"
@@ -127,7 +129,8 @@ export default class KorisnikLoginPage extends React.Component {
                                 </Form.Group>
                             </Form>
 
-                            <Alert variant = "danger">
+                            <Alert variant = "danger" 
+                                className={ this.state.errorMesasage ? '' : 'd-none' }>
                                 { this.state.errorMesasage }
                             </Alert>
                         </Card.Body>
